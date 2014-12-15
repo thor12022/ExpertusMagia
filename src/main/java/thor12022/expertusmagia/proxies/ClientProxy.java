@@ -1,5 +1,6 @@
 package thor12022.expertusmagia.proxies;
 
-public class ClientProxy extends CommonProxy {
+public class ClientProxy extends CommonProxy
+{
 
 }

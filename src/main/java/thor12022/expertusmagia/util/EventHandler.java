@@ -11,13 +11,16 @@ import thor12022.expertusmagia.ModInformation;
 import cpw.mods.fml.client.event.ConfigChangedEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
-public class EventHandler {
+public class EventHandler
+{
 
-	@SubscribeEvent
-	public void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent eventArgs) {
-		if (eventArgs.modID.equals(ModInformation.ID)) {
-			ConfigHandler.syncConfig();
-			ExpertusMagia.logger.info(TextHelper.localize("info." + ModInformation.ID + ".console.config.refresh"));
-		}
-	}
+   @SubscribeEvent
+   public void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent eventArgs)
+   {
+      if(eventArgs.modID.equals(ModInformation.ID))
+      {
+         ConfigHandler.syncConfig();
+         ExpertusMagia.logger.info(TextHelper.localize("info." + ModInformation.ID + ".console.config.refresh"));
+      }
+   }
 }

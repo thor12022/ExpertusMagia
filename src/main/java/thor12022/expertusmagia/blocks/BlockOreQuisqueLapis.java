@@ -11,21 +11,25 @@ import java.util.Random;
 
 import thor12022.expertusmagia.items.ItemRegistry;
 
-public class BlockOreQuisqueLapis extends BlockBase {
+public class BlockOreQuisqueLapis extends BlockBase
+{
 
-	public BlockOreQuisqueLapis() {
-		super("quisque.lapis.ore", Material.rock, "quisqueLapis_ore", soundTypeStone, 3F);
-	}
+   public BlockOreQuisqueLapis()
+   {
+      super("quisque.lapis.ore", Material.rock, "quisqueLapis_ore", soundTypeStone, 3F);
+   }
 
-	// Drops the item you return here when broken.
-	@Override
-	public Item getItemDropped(int int1, Random random, int int2) {
-		return ItemRegistry.quisqueLapis;
-	}
+   // Drops the item you return here when broken.
+   @Override
+   public Item getItemDropped(int int1, Random random, int int2)
+   {
+      return ItemRegistry.quisqueLapis;
+   }
 
-	// Drops the amount of items you get here.
-	@Override
-	public int quantityDropped(Random random) {
-		return this == this ? 4 + random.nextInt(5) : 1;
-	}
+   // Drops the amount of items you get here.
+   @Override
+   public int quantityDropped(Random random)
+   {
+      return this == this ? 4 + random.nextInt(5) : 1;
+   }
 }

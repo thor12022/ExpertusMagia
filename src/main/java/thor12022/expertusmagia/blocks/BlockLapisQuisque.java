@@ -6,9 +6,11 @@ package thor12022.expertusmagia.blocks;
 
 import net.minecraft.block.material.Material;
 
-public class BlockLapisQuisque extends BlockBase {
+public class BlockLapisQuisque extends BlockBase
+{
 
-	public BlockLapisQuisque() {
-		super("quisque.lapis.block", Material.rock, "quisqueLapis_block", soundTypeStone, 1F);
-	}
+   public BlockLapisQuisque()
+   {
+      super("quisque.lapis.block", Material.rock, "quisqueLapis_block", soundTypeStone, 1F);
+   }
 }
