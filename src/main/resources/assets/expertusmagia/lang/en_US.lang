@@ -1,5 +1,5 @@
 #CREATIVE TAB
-itemGroup.expertusmagia.creativeTab=Base Mod
+itemGroup.expertusmagia.creativeTab=Expertus Magia
 
 #CONFIG GUI
 gui.expertusmagia.config.title=Base Mod Configuration
@@ -9,16 +9,24 @@ tile.expertusmagia.quisque.lapis.block.name=Lapis Quisque Block
 tile.expertusmagia.quisque.lapis.ore.name=Lapis Quisque Ore
 
 #ITEMS
-item.expertusmagia.quisque.lapis.name=Lapis Quisque
+item.expertusmagia.wand.name=Wand
 item.expertusmagia.book.base.name=Base Book
 item.expertusmagia.book.yolo.name=Book of Yolo
 
 #TOOLTIPS
-info.expertusmagia.tooltip.fire=This book will set you on fire.
+info.expertusmagia.tooltip.shiftMessage=Press §2§oSHIFT§r§7 for stats
+info.expertusmagia.tooltip.harvestLevel=Harvest Level
+info.expertusmagia.tooltip.digSpeed=Dig Speed
+info.expertusmagia.tooltip.enchantability=Enchantability
+
 
 #CHAT
 info.expertusmagia.chat.sneak=Sneak to set yourself ablaze.
 info.expertusmagia.chat.lowXp=You are not experienced enough
+
+#ENCHANTMENT
+enchantment.expertusmagia.excavate=Excavate
+enchantment.expertusmagia.attack=Attack
 
 #BASEBOOK
 #TITLES

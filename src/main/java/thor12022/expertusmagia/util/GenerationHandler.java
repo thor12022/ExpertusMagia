@@ -42,7 +42,7 @@ public class GenerationHandler implements IWorldGenerator
          int firstBlockZCoord = chunkZ + rand.nextInt(16);
          int quisqueY = rand.nextInt(20);
 
-         if(ConfigHandler.enableGeneration)
+         if(false/*ConfigHandler.enableGeneration*/)
             (new WorldGenMinable(BlockRegistry.quisqueLapisOre, 0, 4, Blocks.stone)).generate(world, rand, firstBlockXCoord, quisqueY, firstBlockZCoord);
       }
    }

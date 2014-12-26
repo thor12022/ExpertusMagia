@@ -14,6 +14,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraftforge.common.MinecraftForge;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -22,6 +23,7 @@ import thor12022.expertusmagia.blocks.BlockRecipeRegistry;
 import thor12022.expertusmagia.blocks.BlockRegistry;
 import thor12022.expertusmagia.client.gui.CreativeTabBaseMod;
 import thor12022.expertusmagia.client.gui.GuiHandler;
+import thor12022.expertusmagia.enchantments.EnchantmentRegistry;
 import thor12022.expertusmagia.items.ItemRecipeRegistry;
 import thor12022.expertusmagia.items.ItemRegistry;
 import thor12022.expertusmagia.proxies.CommonProxy;
@@ -52,9 +54,11 @@ public class ExpertusMagia
 
       ItemRegistry.registerItems();
       BlockRegistry.registerBlocks();
+      EnchantmentRegistry.registerEnchantments();
 
       OreDictHandler.registerOreDict();
       FMLCommonHandler.instance().bus().register(new EventHandler());
+      MinecraftForge.EVENT_BUS.register(new EventHandler());
       NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
 
       GameRegistry.registerWorldGenerator(new GenerationHandler(), 2);

@@ -6,8 +6,10 @@ package thor12022.expertusmagia.items;
  * Keep that in mind if you like nicely organized creative tabs.
  */
 
+import thor12022.expertusmagia.ConfigHandler;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
+import net.minecraft.init.Items;
 
 public class ItemRegistry
 {

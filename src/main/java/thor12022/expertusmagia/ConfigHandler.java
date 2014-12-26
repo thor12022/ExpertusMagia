@@ -14,12 +14,12 @@ public class ConfigHandler
    public static Configuration config;
 
    // Sections to add to the config
-   public static String exampleSection = "Example Section";
-   public static String generation = "Generation";
+   public static String exampleSection = "Enchantments";
 
    // Options in the config
-   public static boolean exampleOption;
-   public static boolean enableGeneration;
+   public static int excavateEnchantmentId   = 232;
+   public static int attackEnchantmentId     = 233;
+   public static int empowerEnchantmentId    = 0;
 
    public static void init(File file)
    {
@@ -29,11 +29,11 @@ public class ConfigHandler
 
    public static void syncConfig()
    {
-      config.addCustomCategoryComment(exampleSection, "Example section comment");
-      config.addCustomCategoryComment(generation, "This section contains all settings regarding ore generation.");
+      config.addCustomCategoryComment(exampleSection, "");
 
-      exampleOption = config.get(exampleSection, "exampleOption", true, "Description of option goes here.").getBoolean(exampleOption);
-      enableGeneration = config.get(generation, "enableGeneration", true, "Enable Lapis Quisque generation").getBoolean(enableGeneration);
+      excavateEnchantmentId = config.get(exampleSection, "excavate", excavateEnchantmentId, "WIP").getInt(excavateEnchantmentId);
+      attackEnchantmentId = config.get(exampleSection, "attack", attackEnchantmentId, "WIP").getInt(attackEnchantmentId);
+      empowerEnchantmentId = config.get(exampleSection, "empower", empowerEnchantmentId, "Unimplemented").getInt(empowerEnchantmentId);
 
       config.save();
    }
