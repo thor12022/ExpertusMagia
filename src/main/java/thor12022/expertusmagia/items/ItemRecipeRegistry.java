@@ -22,7 +22,7 @@ public class ItemRecipeRegistry
 
    private static void registerShaplessRecipes()
    {
-      GameRegistry.addShapelessRecipe(new ItemStack(BlockRegistry.quisqueLapisBlock), new ItemStack( ItemRegistry.quisqueLapis, 9));
+      //GameRegistry.addShapelessRecipe(new ItemStack(BlockRegistry.exampleBlock), new ItemStack( ItemRegistry.example, 9));
    }
 
    public static void registerItemRecipes()

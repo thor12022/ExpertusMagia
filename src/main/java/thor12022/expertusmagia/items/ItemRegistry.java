@@ -15,15 +15,11 @@ public class ItemRegistry
 {
 
    // items
-   public static Item quisqueLapis;
    public static Item baseBook;
    public static Item wand;
 
    public static void registerItems()
    {
-      quisqueLapis = new ItemLapisQuisque();
-      GameRegistry.registerItem(quisqueLapis, "ItemLapisQuisque");
-
       baseBook = new ItemBaseBook();
       GameRegistry.registerItem(baseBook, "ItemBaseBook");
 

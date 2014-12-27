@@ -26,7 +26,7 @@ public class CreativeTabBaseMod extends CreativeTabs
    @Override
    public ItemStack getIconItemStack()
    {
-      return new ItemStack(ItemRegistry.quisqueLapis);
+      return new ItemStack(ItemRegistry.wand);
    }
 
    @Override

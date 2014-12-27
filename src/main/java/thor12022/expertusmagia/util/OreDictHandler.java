@@ -12,18 +12,10 @@ public class OreDictHandler
 {
 
    // Oredict entries
-   // items
-   public static String powderBlaze = "powderBlaze";
-   public static String quisqueLapis = "dustQuisqueLapis";
-
-   // blocks
-   public static String quisqueLapis_ore = "oreLapisQuisque";
+   //public static String example = "dustExample";
 
    public static void registerOreDict()
    {
-      OreDictionary.registerOre(powderBlaze, new ItemStack(Items.blaze_powder, 1, 0));
-      OreDictionary.registerOre(quisqueLapis, new ItemStack(ItemRegistry.quisqueLapis));
-
-      OreDictionary.registerOre(quisqueLapis_ore, new ItemStack(BlockRegistry.quisqueLapisOre));
+      //OreDictionary.registerOre(example, new ItemStack(ItemRegistry.example));
    }
 }

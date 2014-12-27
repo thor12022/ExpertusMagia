@@ -20,7 +20,7 @@ import thor12022.expertusmagia.util.TextHelper;
 public class ItemBaseBook extends ItemBase
 {
 
-   public IIcon[] icon = new IIcon[500];
+   public IIcon[] icon = new IIcon[1];
 
    public ItemBaseBook()
    {
@@ -40,11 +40,6 @@ public class ItemBaseBook extends ItemBase
             name = "base";
             break;
          }
-         case 1:
-         {
-            name = "yolo";
-            break;
-         }
          default:
             name = "nothing";
             break;
@@ -56,7 +51,6 @@ public class ItemBaseBook extends ItemBase
    public void registerIcons(IIconRegister ri)
    {
       this.icon[0] = ri.registerIcon(ModInformation.ID + ":baseBook_closed");
-      this.icon[1] = ri.registerIcon(ModInformation.ID + ":baseBook_open");
    }
 
    @SideOnly(Side.CLIENT)
@@ -69,7 +63,7 @@ public class ItemBaseBook extends ItemBase
    @SideOnly(Side.CLIENT)
    public void getSubItems(Item item, CreativeTabs par2CreativeTabs, List list)
    {
-      for(int i = 0; i <= 1; i++)
+      for(int i = 0; i <= 0; i++)
       {
          list.add(new ItemStack(this, 1, i));
       }
@@ -85,17 +79,6 @@ public class ItemBaseBook extends ItemBase
             player.openGui(ExpertusMagia.instance, 0, world, (int) player.posX, (int) player.posY, (int) player.posZ);
             return itemStack;
          }
-         case 1:
-         {
-            if(player.isSneaking() && !player.capabilities.isCreativeMode)
-            {
-               player.swingItem();
-               player.setFire(3);
-            } else if(!player.isSneaking() && !player.worldObj.isRemote)
-            {
-               player.addChatMessage(new ChatComponentTranslation("info." + ModInformation.ID + ".chat.sneak"));
-            }
-         }
       }
       return itemStack;
    }
@@ -104,9 +87,5 @@ public class ItemBaseBook extends ItemBase
    @Override
    public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean par4)
    {
-      if(itemStack.getItemDamage() == 1)
-      {
-         list.add(TextHelper.RED + TextHelper.localize("info." + ModInformation.ID + ".tooltip.fire"));
-      }
    }
 }

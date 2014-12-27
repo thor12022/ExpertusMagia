@@ -16,8 +16,7 @@ public class BlockRecipeRegistry
    // registerPulverizerRecipes
    private static void registerShapedRecipes()
    {
-      GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Blocks.gold_ore), new Object[] { "XXX", "X X", "XXX", 'X', "ingotGold" }));
-      GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(BlockRegistry.quisqueLapisBlock), new Object[] { "XXX", "XXX", "XXX", 'X', "dustQuisqueLapis" }));
+      //GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(BlockRegistry.exampleBlock), new Object[] { "XXX", "XXX", "XXX", 'X', "dustExample" }));
    }
 
    private static void registerShaplessRecipes()
