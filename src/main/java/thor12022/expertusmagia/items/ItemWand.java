@@ -25,7 +25,7 @@ import com.google.common.collect.Multimap;
 
 import thor12022.expertusmagia.ExpertusMagia;
 import thor12022.expertusmagia.ModInformation;
-import thor12022.expertusmagia.enchantments.EnchantmentRegistry;
+import thor12022.expertusmagia.enchantments.BaseEnchantment;
 import thor12022.expertusmagia.util.KeyboardHelper;
 import thor12022.expertusmagia.util.TextHelper;
 
@@ -49,7 +49,7 @@ public class ItemWand extends ItemBase
    @Override
    public int getItemEnchantability()
    {
-       return 12;
+       return 8;
    }
    
    @Override
@@ -61,7 +61,7 @@ public class ItemWand extends ItemBase
    @Override
    public float getDigSpeed(ItemStack stack, Block block, int meta)
    {
-      if( EnchantmentHelper.getEnchantmentLevel(EnchantmentRegistry.excavate.effectId, stack) > 0 )
+      if( EnchantmentHelper.getEnchantmentLevel(BaseEnchantment.excavate.effectId, stack) > 0 )
       {
          return (EnchantmentHelper.getEnchantmentLevel(Enchantment.efficiency.effectId, stack) + 1 ) * 1.5f;
       }
@@ -110,7 +110,7 @@ public class ItemWand extends ItemBase
    public int getHarvestLevel(ItemStack stack, String toolClass)
    {
       return ( toolClass == "pickaxe" || toolClass == "shovel" || toolClass == "axe" ) ? 
-               EnchantmentHelper.getEnchantmentLevel(EnchantmentRegistry.excavate.effectId, stack) :
+               EnchantmentHelper.getEnchantmentLevel(BaseEnchantment.excavate.effectId, stack) :
                0;
    }
 
@@ -127,7 +127,7 @@ public class ItemWand extends ItemBase
    public Multimap getAttributeModifiers(ItemStack stack)
    {
        Multimap multimap = super.getItemAttributeModifiers();
-       double modifier = EnchantmentHelper.getEnchantmentLevel(EnchantmentRegistry.attack.effectId, stack) * 1.0;
+       double modifier = EnchantmentHelper.getEnchantmentLevel(BaseEnchantment.attack.effectId, stack) * 1.0;
        multimap.put(SharedMonsterAttributes.attackDamage.getAttributeUnlocalizedName(), new AttributeModifier(field_111210_e, "Weapon modifier", modifier, 0));
        return multimap;
    }

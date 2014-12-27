@@ -4,13 +4,13 @@ import thor12022.expertusmagia.ConfigHandler;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;
 
-public class EnchantmentAttack extends Enchantment
+public class EnchantmentAttack extends BaseEnchantment
 {
    public static int id;
    
    public EnchantmentAttack()
    {
-      super(ConfigHandler.attackEnchantmentId, 8, EnumEnchantmentType.all);
+      super(ConfigHandler.attackEnchantmentId, 8, EnchantmentType.Primary);
       setName("expertusmagia.attack");
    }
    

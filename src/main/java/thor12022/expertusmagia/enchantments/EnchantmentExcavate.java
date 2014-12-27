@@ -2,16 +2,14 @@ package thor12022.expertusmagia.enchantments;
 
 import thor12022.expertusmagia.ConfigHandler;
 import thor12022.expertusmagia.items.ItemWand;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-public class EnchantmentExcavate extends Enchantment
+public class EnchantmentExcavate extends BaseEnchantment
 {
    public EnchantmentExcavate()
    {
-      super(ConfigHandler.excavateEnchantmentId, 8, EnumEnchantmentType.all);
+      super(ConfigHandler.excavateEnchantmentId, 8, EnchantmentType.Primary);
       setName("expertusmagia.excavate");
    }
    
