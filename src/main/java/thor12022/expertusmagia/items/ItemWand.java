@@ -27,6 +27,7 @@ import thor12022.expertusmagia.ExpertusMagia;
 import thor12022.expertusmagia.ModInformation;
 import thor12022.expertusmagia.enchantments.BaseEnchantment;
 import thor12022.expertusmagia.util.KeyboardHelper;
+import thor12022.expertusmagia.util.PlayerHelper;
 import thor12022.expertusmagia.util.TextHelper;
 
 public class ItemWand extends ItemBase
@@ -74,7 +75,7 @@ public class ItemWand extends ItemBase
    @Override
    public boolean onBlockStartBreak(ItemStack itemstack, int x, int y, int z, EntityPlayer player)
    {
-      if(player.experienceTotal > 0)
+      if(PlayerHelper.hasAnyExperience(player))
       {
          return super.onBlockStartBreak(itemstack, x, y, z, player);
       }
@@ -86,9 +87,23 @@ public class ItemWand extends ItemBase
    }
    
    @Override
+   public boolean onBlockDestroyed(ItemStack stack, World world, Block block, int x,
+         int y, int z, EntityLivingBase player)
+   {
+      if( player instanceof EntityPlayer )
+      {
+         if(PlayerHelper.hasAnyExperience(player))
+         {
+            PlayerHelper.subtractExperience((EntityPlayer) player, 1);
+         }
+      }
+      return super.onBlockDestroyed(stack, world, block, x, y, z, player);
+   }
+
+   @Override
    public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float hitX, float hitY, float hitZ)
    {
-      if(player.experienceTotal > 0)
+      if(PlayerHelper.hasAnyExperience(player))
       {
          return super.onItemUse(stack, player, world, x, y, z, side, hitX, hitY, hitZ);
       } 
@@ -138,11 +153,10 @@ public class ItemWand extends ItemBase
       if( harvestLevel > 0 )
       {
          toolTip.add(new String(TextHelper.localize("info." + ModInformation.ID + ".tooltip.harvestLevel") + ": " + harvestLevel));
+         Block digBlock = (BlockStone)Block.blockRegistry.getObject("stone");
+         toolTip.add(new String(TextHelper.localize("info." + ModInformation.ID + ".tooltip.digSpeed") +": " + 
+                             String.format("%.2f", itemStack.getItem().getDigSpeed(itemStack, digBlock,0))));
       }
-      Block digBlock;
-      digBlock = (BlockStone)Block.blockRegistry.getObject("stone");
-      toolTip.add(new String(TextHelper.localize("info." + ModInformation.ID + ".tooltip.digSpeed") +": " + 
-                          String.format("%.2f", itemStack.getItem().getDigSpeed(itemStack, digBlock,0))));
       toolTip.add(new String(TextHelper.localize("info." + ModInformation.ID + ".tooltip.enchantability") + ": " + 
                           itemStack.getItem().getItemEnchantability()));
    }
